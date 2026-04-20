@@ -1,0 +1,18 @@
+1.Linked list-[Book] -> [Book] -> [Book] -> null
+
+
+2.Stack-LIFO-Last in ,first out;Stack lucreaza doar cu head!
+Metode:1.PUSH = adauga la inceput
+       2.POP = scoate din început
+
+3.Queue -FIFO-first in first out(ca la magazin)
+        ->adaugi la final,scoti la inceput(functioneaza impreuna)
+Metode: 1.->ENQUEUE (add la final)
+        2.->DEQUEUE (remove de la început)
+
+
+
+      !!  Stack = operezi doar pe head
+      !!  Queue = head + final
+
+4.Liste generice

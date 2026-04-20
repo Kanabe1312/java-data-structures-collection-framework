@@ -1,0 +1,173 @@
+  User  user=UserFactory.createFromText("ADMIN,9999,Kanabe,Boss,2000-01-01,admin@gmail.com,12345678,READ_STUDENT;WRITE_STUDENT;READ_TEACHER;WRITE_TEACHER;READ_COURSE;WRITE_COURSE;READ_BOOK;WRITE_BOOK;READ_SCHEDULE;WRITE_SCHEDULE;READ_ENROLMENT;WRITE_ENROLMENT;READ_PERMISSIONS;WRITE_PERMISSIONS");
+        User  user1 = UserFactory.createFromText("TEACHER,1001,Anna,Schmidt,1980-05-12,anna.schmidt@gmail.com,pass123444,Math,false,READ_STUDENT;WRITE_STUDENT;READ_TEACHER;WRITE_TEACHER;READ_COURSE;WRITE_COURSE");
+        User user2 = UserFactory.createFromText("TEACHER,1002,Markus,Fischer,1975-09-23,markus.fischer@gmail.com,mark9877777,Physics,false,READ_STUDENT;WRITE_STUDENT;READ_TEACHER;WRITE_TEACHER;READ_COURSE;WRITE_COURSE");
+        User user3 = UserFactory.createFromText("STUDENT,2001,John,Doe,2002-04-10,johndoe@gmail.com,John127773,BACHELOR,45,READ_BOOK;WRITE_BOOK;READ_SCHEDULE;WRITE_SCHEDULE;READ_ENROLMENT;WRITE_ENROLMENT");
+        User user4 = UserFactory.createFromText("STUDENT,2002,Emma,Meyer,2001-11-05,emma.meyer@gmail.com,emma7777123,BACHELOR,60,READ_BOOK;WRITE_BOOK;READ_SCHEDULE;WRITE_SCHEDULE;READ_ENROLMENT;WRITE_ENROLMENT");
+        User user5 = UserFactory.createFromText("STUDENT,2003,Lukas,Becker,2000-08-21,lukas.becker@gmail.com,luka7888s999,BACHELOR,30,READ_BOOK;WRITE_BOOK;READ_SCHEDULE;WRITE_SCHEDULE;READ_ENROLMENT;WRITE_ENROLMENT");
+
+
+
+
+        UserNode head;//gol
+        UserNode node = new UserNode(user);//500
+        head=node;//head devine 500
+
+
+        UserNode node2 = new UserNode(user1);//434
+        node2.setNext(head);// next se pune pe 500
+        head=node2;// head devine 434
+
+        UserNode node3 = new UserNode(user2);//533
+        node3.setNext(head);//next se pune 434
+        head=node3;// head devine 533
+
+
+        //        UserNode aux=head;
+        //        System.out.println(aux.getUser());
+        //        aux=aux.getNext();
+        //        System.out.println(aux.getUser());
+        //        aux=aux.getNext();
+        //        System.out.println(aux.getUser());
+
+
+        UserList userList=new UserList();
+        userList.addEnd(user);
+        userList.addEnd(user1);
+        userList.addEnd(user2);
+
+       // userList.display();
+
+        System.out.println("________BOOKS_________");
+
+        Book book1 = new Book("8350,10,Java Basics,2026-03-21");
+        Book book2 = new Book("924,10,Data Structures in Java,2026-03-21");
+        Book book3 = new Book("851,101,C++ Basics,2026-03-21");
+        Book book4 = new Book("1421,7,Operating Systems Concepts,2026-03-22");
+        BookList bookList = new BookList();
+        bookList.addEnd(book1);
+        bookList.addEnd(book2);
+        bookList.addEnd(book3);
+        bookList.addEnd(book4);
+       // Book removed = bookList.removeFromSpecificPosition(2);
+        //        System.out.println("S-a Stres:");
+        //        System.out.println(removed);
+        //        System.out.println("DUpa stergere:");
+        //        bookList.display();
+        System.out.println("Inainte de stergere");
+        bookList.display();
+        bookList.addToSpecificPosition(1,book4);
+        System.out.println("Dupa inseare");
+        bookList.display();
+
+
+      //  BookList bookList = new BookList();
+        //        System.out.println("===STERGERE DIN FATA===");
+        //        bookList.addEnd(book1);
+        //        bookList.addEnd(book2);
+        //        bookList.addEnd(book3);
+        //        System.out.println("Inainte de stergere:");
+        //        bookList.display();
+        //        bookList.removeStart();
+        //        System.out.println("Dupa stergere: ");
+        //        bookList.display();
+        //        System.out.println("===STERGERE DIN SPATE===");
+        //        bookList.addEnd(book1);
+        //        bookList.addEnd(book2);
+        //        bookList.addEnd(book3);
+        //
+        //        System.out.println("------->INAINTE DE STERGERE: ");
+        //        bookList.display();
+        //
+        //        System.out.println("------>DUPA STERGERE: ");
+        //        bookList.removeEnd();
+        //        bookList.display();
+
+        //System.out.println("_______COURSES_________");
+        Course course1 = new Course("101,Java Basics,Programming");
+        Course course2 = new Course("102,Advanced Java,Programming");
+        Course course3 = new Course("115,Mobile App Development,Programming");
+
+        CourseList courseList = new CourseList();
+        courseList.addEnd(course1);
+        courseList.addEnd(course2);
+        courseList.addEnd(course3);
+        //courseList.display();
+
+
+
+
+
+
+
+
+
+
+         //todo: stiva si coada impl
+
+                // ----------Book stack
+                BookList list = new BookList();
+
+                list.push(new Book(1, "Java"));
+                list.push(new Book(2, "C++"));
+                list.push(new Book(3, "Python"));
+
+                System.out.println("------Book-STACK");
+                System.out.println(list.pop());
+                System.out.println(list.pop());
+
+
+                BookList listbook2 = new BookList();
+                listbook2.enqueue(new Book(4, "Java"));
+                listbook2.enqueue(new Book(5, "C++"));
+                listbook2.enqueue(new Book(6, "Python"));
+                System.out.println("------Book-queue");
+                System.out.println(listbook2.dequeue());
+                System.out.println(listbook2.dequeue());
+
+
+
+                // ---------User stck
+                UserList list2 = new UserList();
+
+                list2.push(new Student("STUDENT,3336,Alex,Marcu,2000-10-10,alex@gmail.com,123456789,BACHELOR,39,READ_BOOK;WRITE_BOOK;READ_SCHEDULE;WRITE_SCHEDULE;READ_ENROLMENT;WRITE_ENROLMENT"));
+                list2.push(new Teacher("TEACHER,3615,Lucas,Andrei,1980-10-10,andrei@gmail.com,12344321123,Math,false,READ_STUDENT;WRITE_STUDENT;READ_TEACHER;WRITE_TEACHER;READ_COURSE;WRITE_COURSE"));
+
+                System.out.println("\n--------User--->STACK");
+                System.out.println(list2.pop());
+                System.out.println(list2.pop());
+
+
+                // USER QUEUE
+                UserList list3 = new UserList();
+
+                list3.enqueue(new Student("STUDENT,3336,Alex,Marcu,2000-10-10,alex@gmail.com,123456789,BACHELOR,39,READ_BOOK;WRITE_BOOK;READ_SCHEDULE;WRITE_SCHEDULE;READ_ENROLMENT;WRITE_ENROLMENT"));
+                list3.enqueue(new Student("STUDENT,2002,Emma,Meyer,2001-11-05,emma.meyer@gmail.com,emma7777123,BACHELOR,60,READ_BOOK;WRITE_BOOK;READ_SCHEDULE;WRITE_SCHEDULE;READ_ENROLMENT;WRITE_ENROLMENT"));
+                list3.enqueue(new Teacher("TEACHER,1005,Sabine,Hoffmann,1983-07-19,sabine.hoffmann@gmail.com,sabi2226666,Biology,false,READ_STUDENT;WRITE_STUDENT;WRITE_TEACHER;READ_COURSE;WRITE_COURSE"));
+
+                System.out.println("\nUSER ---->QUEUE");
+                System.out.println(list3.dequeue());
+                System.out.println(list3.dequeue());
+
+
+                // Stack
+                CourseList courseList = new CourseList();
+
+                courseList.push(new Course("Computer Networks", "IT"));
+                courseList.push(new Course("Web Development", "Programming"));
+                courseList.push(new Course("Software Engineering", "IT"));
+
+                System.out.println("\nCourse----> STACK");
+                System.out.println(courseList.pop());
+                System.out.println(courseList.pop());
+
+
+                // COurse queue
+                CourseList courseList2 = new CourseList();
+
+                courseList2.enqueue(new Course("Machine Learning", "AI"));
+                courseList2.enqueue(new Course("Artificial Intelligence", "AI"));
+                courseList2.enqueue(new Course("Cyber Security", "IT"));
+
+                System.out.println("\nQueue----> Course");
+                System.out.println(courseList2.dequeue());
+                System.out.println(courseList2.dequeue());

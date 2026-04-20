@@ -1,52 +1,120 @@
 package app;
 
 import app.liste.UserList;
-import app.liste.UserNode;
-import app.users.factory.UserFactory;
+import app.listeGenerice.Lista;
+import app.listeGenerice.Node;
+import app.listeGenerice.Stiva;
+import app.users.comparators.UserBithdayComparer;
+import app.users.comparators.UserFirstnameComparer;
+import app.users.comparators.UserPermissionsComparer;
+import app.users.models.Student;
+import app.users.models.Teacher;
+import app.books.model.Book;
+import app.liste.BookList;
+import app.course.model.Course;
+import app.liste.CourseList;
 import app.users.models.User;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        //comparatie
+        User u1 = new Student("STUDENT,3336,Alex,Marcu,2000-10-10,alex@gmail.com,123456789,BACHELOR,39,READ_BOOK;WRITE_BOOK;READ_SCHEDULE;WRITE_SCHEDULE;READ_ENROLMENT;WRITE_ENROLMENT");
+        User u2 = new Student("STUDENT,2002,Emma,Meyer,2001-11-05,emma.meyer@gmail.com,emma7777123,BACHELOR,60,READ_BOOK;WRITE_BOOK;READ_SCHEDULE;WRITE_SCHEDULE;READ_ENROLMENT;WRITE_ENROLMENT");
+        System.out.println(u1.compareTo(u2));
+
+        Lista<User> listaUsers= new Lista<>();
+        listaUsers.addStart(new Student("STUDENT,2001,Ana,Doe,2000-04-10,johndoe@gmail.com,John127773,BACHELOR,45,READ_BOOK;WRITE_BOOK;READ_SCHEDULE;WRITE_SCHEDULE;READ_ENROLMENT;WRITE_ENROLMENT"));
+        listaUsers.addStart(new Student("STUDENT,2003,Luca,Becker,2005-08-21,lukas.becker@gmail.com,luka7888s999,BACHELOR,30,READ_BOOK;WRITE_BOOK;READ_SCHEDULE;WRITE_SCHEDULE;READ_ENROLMENT;WRITE_ENROLMENT"));
+        listaUsers.addStart(new Student("STUDENT,2123,Alexx,Marcu,2003-10-10,alexmarcu@gmail.com,12345678,BACHELOR,100,READ_ENROLMENT;WRITE_ENROLMENT;WRITE_BOOK;WRITE_STUDENT"));
+        listaUsers.addStart(new Student("STUDENT,2123,Alexx,Marcu,2003-10-10,alexmarcu@gmail.com,12345678,BACHELOR,100,READ_ENROLMENT;WRITE_ENROLMENT;WRITE_BOOK;WRITE_STUDENT"));
+        //listaUsers.display();
+       // listaUsers.enqueue(u1);
+        System.out.println("Dupa sortare:");
+       // listaUsers.display();
+        //todo STACK
+
+       // listaUsers = listaUsers.removeDuplicates();--->ex2 lista noua
+
+       // listaUsers.display();
+
+        //todo EX3
+        Lista<Integer> lista = new Lista<>();
+
+       // lista.addEnd(3);
+        //        lista.addEnd(7);
+        //        lista.addEnd(1);
+        //        lista.addEnd(9);
+        //        lista.addEnd(-2);
+        //        lista.addEnd(8);
+        //
+        //        lista.minMax();
+
+        //todo EX4
+       // lista.addEnd(1);
+        //        lista.addEnd(2);
+        //        lista.addEnd(3);
+        //        lista.addEnd(2);
+        //        lista.addEnd(1);
+        //
+        //        System.out.println(lista.isPalindrome());
+        //todo EX5
+        Lista<Integer> a = new Lista<>();
+        a.addEnd(1);
+        a.addEnd(3);
+        a.addEnd(5);
+
+        Lista<Integer> b = new Lista<>();
+        b.addEnd(2);
+        b.addEnd(4);
+        b.addEnd(6);
+        Lista<Integer> c = a.merge(b);
+
+       // c.display();
+
+        //todo EX6
+        lista = new Lista<>();
+
+        lista.addEnd(1);
+        lista.addEnd(2);
+        lista.addEnd(3);
+        lista.addEnd(4);
+        lista.addEnd(5);
+
+        lista.rotateLeft(2);
 
 
-        User  user=UserFactory.createFromText("ADMIN,9999,Kanabe,Boss,2000-01-01,admin@gmail.com,12345678,READ_STUDENT;WRITE_STUDENT;READ_TEACHER;WRITE_TEACHER;READ_COURSE;WRITE_COURSE;READ_BOOK;WRITE_BOOK;READ_SCHEDULE;WRITE_SCHEDULE;READ_ENROLMENT;WRITE_ENROLMENT;READ_PERMISSIONS;WRITE_PERMISSIONS");
-        User  user1 = UserFactory.createFromText("TEACHER,1001,Anna,Schmidt,1980-05-12,anna.schmidt@gmail.com,pass123444,Math,false,READ_STUDENT;WRITE_STUDENT;READ_TEACHER;WRITE_TEACHER;READ_COURSE;WRITE_COURSE");
-        User user2 = UserFactory.createFromText("TEACHER,1002,Markus,Fischer,1975-09-23,markus.fischer@gmail.com,mark9877777,Physics,false,READ_STUDENT;WRITE_STUDENT;READ_TEACHER;WRITE_TEACHER;READ_COURSE;WRITE_COURSE");
-        User user3 = UserFactory.createFromText("STUDENT,2001,John,Doe,2002-04-10,johndoe@gmail.com,John127773,BACHELOR,45,READ_BOOK;WRITE_BOOK;READ_SCHEDULE;WRITE_SCHEDULE;READ_ENROLMENT;WRITE_ENROLMENT");
-        User user4 = UserFactory.createFromText("STUDENT,2002,Emma,Meyer,2001-11-05,emma.meyer@gmail.com,emma7777123,BACHELOR,60,READ_BOOK;WRITE_BOOK;READ_SCHEDULE;WRITE_SCHEDULE;READ_ENROLMENT;WRITE_ENROLMENT");
-        User user5 = UserFactory.createFromText("STUDENT,2003,Lukas,Becker,2000-08-21,lukas.becker@gmail.com,luka7888s999,BACHELOR,30,READ_BOOK;WRITE_BOOK;READ_SCHEDULE;WRITE_SCHEDULE;READ_ENROLMENT;WRITE_ENROLMENT");
+        //todo EX5
+        lista.addEnd(1);
+        lista.addEnd(2);
+        lista.addEnd(3);
+        lista.addEnd(4);
+        lista.addEnd(5);
 
-        UserNode head;//gol
-        UserNode node = new UserNode(user);//500
-        head=node;//head devine 500
+        lista.rotateLeft(2);
 
+       // lista.display();
 
-        UserNode node2 = new UserNode(user1);//434
-        node2.setNext(head);// next se pune pe 500
-        head=node2;// head devine 434
+        //todo EX7
+        lista.addEnd(1);
+        lista.addEnd(3);
+        lista.addEnd(2);
+        lista.addEnd(3);
+        lista.addEnd(4);
+        lista.addEnd(3);
 
-        UserNode node3 = new UserNode(user2);//533
-        node3.setNext(head);//next se pune 434
-        head=node3;// head devine 533
+        lista.removeAll(3);
 
-
-        //        UserNode aux=head;
-        //        System.out.println(aux.getUser());
-        //        aux=aux.getNext();
-        //        System.out.println(aux.getUser());
-        //        aux=aux.getNext();
-        //        System.out.println(aux.getUser());
+        lista.display();
 
 
-        UserList userList=new UserList();
-        userList.addEnd(user);
-        userList.addEnd(user1);
-        userList.addEnd(user2);
-
-        userList.display();
 
 
     }
-
-
 }
+
+
+
+

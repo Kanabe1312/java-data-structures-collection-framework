@@ -13,7 +13,6 @@ public class UserNode {
         this.user = user;
     }
 
-
     public User getUser() {
         return user;
     }

@@ -46,6 +46,60 @@ public class UserList {
     }
 
 
+    //todo: STACK
+
+    public void push(User user) {
+        UserNode newNode = new UserNode(user);
+
+        newNode.setNext(head);
+        head = newNode;
+    }
+    //baga in fata
+
+    public User pop() {
+        if (head == null) {
+            return null;
+        }
+
+        User removedUser = head.getUser();
+        head = head.getNext();
+
+        return removedUser;
+    }
+    //scoate primul,ia de "sus"
+
+
+
+    //todo QUEUE
+
+    public void enqueue(User user) {
+        UserNode newNode = new UserNode(user);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+        UserNode aux = head;
+
+        while (aux.getNext() != null) {
+            aux = aux.getNext();
+        }
+        aux.setNext(newNode);
+    }
+
+
+    public User dequeue() {
+        if (head == null) {
+            return null;
+        }
+
+        User removedUser = head.getUser();
+        head = head.getNext();
+
+        return removedUser;
+    }
+
+
 
 
 }
