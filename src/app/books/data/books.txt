@@ -1,0 +1,19 @@
+8350,10,Java Basics,2026-03-21
+924,10,Data Structures in Java,2026-03-21
+851,101,C++ Basics,2026-03-21
+5224,1,Java Pro,2026-03-23
+568,2,OOP Design,2026-03-23
+8316,1234,Algorithms Explained,2026-03-24
+2178,1,C# Basics,2026-03-25
+1045,3,Introduction to Programming,2026-03-22
+1189,4,Discrete Mathematics,2026-03-22
+1290,5,Computer Networks,2026-03-22
+1367,6,Database Fundamentals,2026-03-22
+1421,7,Operating Systems Concepts,2026-03-22
+1533,8,Web Development Essentials,2026-03-23
+1644,9,Software Engineering Principles,2026-03-23
+1755,11,Clean Code,2026-03-23
+1866,12,Spring Boot for Beginners,2026-03-24
+1977,13,Python Crash Course,2026-03-24
+2088,14,Machine Learning Basics,2026-03-24
+2199,15,Artificial Intelligence Intro,2026-03-24

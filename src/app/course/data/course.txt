@@ -1,0 +1,15 @@
+101,Java Basics,Programming
+102,Advanced Java,Programming
+103,Data Structures,Computer Science
+104,Algorithms,Computer Science
+105,Object Oriented Programming,Programming
+106,Database Systems,IT
+107,Operating Systems,Computer Science
+108,Computer Networks,IT
+109,Web Development,Programming
+110,Software Engineering,IT
+111,Machine Learning,AI
+112,Artificial Intelligence,AI
+113,Cyber Security,IT
+114,Cloud Computing,IT
+115,Mobile App Development,Programming

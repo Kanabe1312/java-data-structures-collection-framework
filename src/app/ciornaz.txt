@@ -299,3 +299,93 @@
                              coada.display();
                              System.out.println("----------");
                              System.out.println("Varf: "+coada.peek());
+
+
+
+
+       //Lista<Integer> lista = new Lista<>();
+        //
+        //lista.addEnd(38);
+        //lista.addEnd(27);
+        //lista.addEnd(43);
+        //lista.addEnd(3);
+        //lista.addEnd(9);
+        //lista.addEnd(82);
+        //lista.addEnd(10);
+        //
+        //System.out.println("Initial:");
+        //lista.display();
+        //
+        //lista = lista.mergeSort();
+        //
+        //System.out.println("Sortat:");
+        //lista.display();
+
+
+        //todo EX9
+        Lista<Integer> lista = new Lista<>();
+
+        lista.addEnd(38);
+        lista.addEnd(27);
+        lista.addEnd(43);
+        lista.addEnd(3);
+        lista.addEnd(9);
+        lista.addEnd(82);
+        lista.addEnd(10);
+
+        System.out.println("Initial:");
+        lista.display();
+
+        lista = lista.mergeSort();
+
+        System.out.println("Sortat:");
+        lista.display();
+
+
+
+         //todo:EX1 ---SETLIST
+              SetList<Integer>a = new SetList<>();
+              a.addNoDupes(1);
+              a.addNoDupes(2);
+              a.addNoDupes(3);
+              a.addNoDupes(4);
+
+              SetList<Integer>b = new SetList<>();
+              b.addNoDupes(3);
+              b.addNoDupes(4);
+              b.addNoDupes(5);
+              b.addNoDupes(6);
+
+                System.out.println("Reuniune: ");
+                a.union(b).display();
+
+              System.out.println("\nIntersectie: ");
+              a.intersection(b).display();
+
+              System.out.println("\nDiferenta: ");
+              a.difference(b).display();
+
+              //todo EX2
+                   SetList<Integer> a = new SetList<>();
+                   a.addNoDupes(1);
+                   a.addNoDupes(3);
+                   SetList<Integer> b = new SetList<>();
+                   b.addNoDupes(1);
+                   b.addNoDupes(2);
+                   b.addNoDupes(3);
+                   b.addNoDupes(4);
+                   System.out.println(a.isSubset(b));
+
+                   //todo:EX3
+                           SetList<Integer> a = new SetList<>();
+                           a.addNoDupes(1);
+                           a.addNoDupes(2);
+                           a.addNoDupes(3);
+                           a.addNoDupes(4);
+                           SetList<Integer> b = new SetList<>();
+                           b.addNoDupes(3);
+                           b.addNoDupes(4);
+                           b.addNoDupes(5);
+                           b.addNoDupes(6);
+                           SetList<Integer> c = a.symDiff(b);
+                           c.display();
