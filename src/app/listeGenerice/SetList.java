@@ -133,6 +133,33 @@ public class SetList <U extends Comparable<U>>{
     }
     //todo:EX4
     public static SetList<Integer> findDupes(int[] values){
+    SetList<Integer>apare  = new SetList<>();
+    SetList<Integer>dubluri = new SetList<>();
+
+    for (int i = 0; i < values.length; i++) {
+        if(apare.contains(values[i])){
+            dubluri.addNoDupes(values[i]);
+        }else{
+            apare.addNoDupes(values[i]);
+        }
+    }
+    return dubluri;
+
+    }
+    //todo:EX5
+    public static char charUnic(String text){
+        for(int i = 0; i < text.length(); i++){//ia fiecare caracter
+            int count = 0;
+
+            for(int j = 0; j < text.length(); j++){//compara litera curenta cu restu
+                count++;
+
+            }
+          if(count == 1){//daca apare o data
+              return text.charAt(i);//return caracteru unic
+          }
+        }
+        return 0;
 
     }
 

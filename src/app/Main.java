@@ -15,14 +15,15 @@ import app.users.models.User;
 
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
 
-
-
-
+  char x = SetList.charUnic("aaaaaaaa");
+        System.out.println(x);
 
 
 

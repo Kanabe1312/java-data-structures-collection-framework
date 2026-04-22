@@ -389,3 +389,7 @@
                            b.addNoDupes(6);
                            SetList<Integer> c = a.symDiff(b);
                            c.display();
+                   //todo:ex4
+                            int[]v={1,3,5,3,7,1,9,5,5};
+                               SetList<Integer> rez = SetList.findDupes(v);
+                               rez.display();
