@@ -253,29 +253,33 @@ public class Lista <U extends Comparable<U>>{
         return true;
     }
     //EX5
-    public Lista<U> merge(Lista<U>list2){
+    public Lista<U> merge(Lista<U> list2){
         Lista<U> nou = new Lista<>();
 
-        int i = 0, j = 0;
+        int i = 0;
+        int j = 0;
         while(i < this.size() && j < list2.size()){
-            U a = getNode(i).data;
-            U b = getNode(j).data;
-            if(a.compareTo(b) < 0){
+            U a = this.getNode(i).data;
+            U b = list2.getNode(j).data;
+
+            if(a.compareTo(b) <= 0){
                 nou.addEnd(a);
                 i++;
-            }else {
+            }else{
                 nou.addEnd(b);
                 j++;
             }
         }
-
         while(i < this.size()){
             nou.addEnd(this.getNode(i).data);
             i++;
         }
         while(j < list2.size()){
             nou.addEnd(list2.getNode(j).data);
-            j++;        }
+            j++;
+        }
+
+
         return nou;
     }
     //EX6
@@ -305,6 +309,56 @@ public class Lista <U extends Comparable<U>>{
             }
         }
     }
+    //EX8
+    public Lista<U>[] impartireParImpar(){
+        Lista<U>matching = new Lista<>();
+        Lista<U>nonMatching = new Lista<>();
+
+        Node<U> temp = head;
+        while(temp != null){
+            int val = temp.data.compareTo(temp.data);
+            if(val % 2 == 0){
+                matching.addEnd(temp.data);
+            }else{
+                nonMatching.addEnd(temp.data);
+            }
+            temp = temp.next;
+        }
+        Lista<U>[] rezultat = new Lista[2];
+        rezultat[0] = matching;
+        rezultat[1] = nonMatching;
+
+        return rezultat;
+
+
+
+    }
+
+    //EX9
+    public Lista<U> mergeSort(){
+        if(size() <= 1){
+            return this;
+        }
+        int mid = size() / 2;
+
+        Lista<U> left = new Lista<>();
+        Lista<U> right = new Lista<>();
+
+        for(int i = 0; i < mid; i++){
+            left.addEnd(getNode(i).data);
+        }
+        for(int i = mid; i < size(); i++){
+            right.addEnd(getNode(i).data);
+        }
+
+
+        left = left.mergeSort();
+        right = right.mergeSort();
+
+        return left.merge(right);
+    }
+
+
 
 
 }

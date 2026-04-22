@@ -17,4 +17,41 @@ public class Stiva <U extends Comparable<U>>{
             n = n.next;
         }
     }
+    public int size(){
+        int count = 0;
+        Node<U> temp = head;
+        while (temp != null) {
+            count++;
+            temp = temp.next;
+        }
+        return count;
+    }
+
+
+    public void push ( U data){
+        Node<U> n = new Node<>();
+        n.data = data;
+        n.next = head;
+        head = n;
+    }
+    public U pop(){
+        if(head == null){
+            return null;
+        }
+        U data = head.data;
+        head = head.next;
+        return data;
+    }
+    public U peek(){
+        if(head == null){
+            return null;
+        }
+        return head.data;
+    }
+    public boolean isEmpty(){
+        return head == null;
+    }
+
+
+
 }
