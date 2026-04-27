@@ -1,5 +1,7 @@
 package app.listeGenerice;
 
+import app.listeGenerice.Comparatorss.Interval;
+
 public class SetList <U extends Comparable<U>>{
     Node<U> head;
 
@@ -162,6 +164,22 @@ public class SetList <U extends Comparable<U>>{
         return 0;
 
     }
+    //todo: EX7
+    public boolean book(U data){
+        Interval nou = (Interval) data;
+        Node<U> temp = head;
+
+        while(temp != null){
+            Interval existent = (Interval )temp.data;
+            if(nou.getStart() < existent.getEnd() && nou.getEnd() > existent.getStart()){
+                return false;
+            }
+            temp = temp.next;
+        }
+        addNoDupes(data);
+        return true;
+    }
+
 
 
 

@@ -2,6 +2,7 @@ package app;
 
 import app.liste.UserList;
 import app.listeGenerice.*;
+import app.listeGenerice.Comparatorss.Interval;
 import app.users.comparators.UserBithdayComparer;
 import app.users.comparators.UserFirstnameComparer;
 import app.users.comparators.UserPermissionsComparer;
@@ -22,11 +23,22 @@ import java.util.Set;
 public class Main {
     public static void main(String[] args) {
 
-  char x = SetList.charUnic("aaaaaaaa");
-        System.out.println(x);
+        String[] oameni = {"Ana","Bob","Carol","Dan","Eva"};
+        String castigator = Coada.potato(oameni,3);
+        System.out.println("Castigator: " + castigator);
 
+        Coada<Integer> c = new Coada<>();
 
+        c.enqueue(3);
+        c.enqueue(1);
+        c.enqueue(5);
+        c.enqueue(12);
+        c.enqueue(2);
+        c.enqueue(11);
+        c.enqueue(7);
 
+        c.topK(3);
+        c.display();
     }
 }
 

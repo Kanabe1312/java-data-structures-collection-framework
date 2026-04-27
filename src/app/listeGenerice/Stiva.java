@@ -52,6 +52,38 @@ public class Stiva <U extends Comparable<U>>{
         return head == null;
     }
 
+    //todo:EX1
+    public  static boolean verificaParateza(String text){
+        Stiva<Character> stiva = new Stiva<>();
+
+        for(int i = 0;i<text.length();i++){
+            char c = text.charAt(i);
+
+            if(c == '(' || c == '[' || c == '{'){
+                stiva.push(c);
+            }
+            else if(c == ')' || c == ']' || c == '}'){
+                if(stiva.isEmpty()){
+                    return false;
+                }
+                char top = stiva.pop();
+                if(c == ')' && top != '('){
+                    return false;
+                }
+                if(c == ']' && top != '['){
+                    return false;
+                }
+                if(c == '}' && top != '{'){
+                    return false;
+                }
+
+
+            }
+
+
+        }
+        return stiva.isEmpty();
+    }
 
 
 }
