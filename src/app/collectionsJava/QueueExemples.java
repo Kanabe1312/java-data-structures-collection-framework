@@ -232,6 +232,7 @@ public class QueueExemples {
         q2.offer(6);
         q2.offer(8);
 
+
         Queue<Integer> result = new ArrayDeque<>();
         while (!q1.isEmpty() && !q2.isEmpty()) {
             result.offer(q1.poll());
