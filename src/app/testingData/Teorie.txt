@@ -15,4 +15,22 @@ Metode: 1.->ENQUEUE (add la final)
       !!  Stack = operezi doar pe head
       !!  Queue = head + final
 
-4.Liste generice
+
+structură   	comportament
+Queue           	FIFO
+Stack	            LIFO
+Deque       	  ambele
+PriorityQueue	prioritate / sortare
+
+
+
+METODE IMPORTANTE
+
+metodă  	rol
+offer	    adaugă
+poll	    scoate
+peek	    vede primul
+push	    adaugă în stack
+pop	        scoate din stack
+addFirst	început
+addLast	    final

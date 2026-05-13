@@ -1,5 +1,6 @@
 package app;
 
+import app.collectionsJava.QueueExemples;
 import app.collectionsJava.StreamExamples;
 import app.testingData.Masina;
 import app.testingData.MasinaData;
@@ -11,9 +12,9 @@ public class Main {
     public static void main(String[] args) {
 
 
+       QueueExemples q = new QueueExemples();
+       q.Ex11();
 
-        List<Masina>masini = MasinaData.getMasini();
-        StreamExamples.ex6(masini);
 
 
     }

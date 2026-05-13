@@ -74,7 +74,11 @@ public class StreamExamples {
         System.out.println("\n===Masina cu motorul cel mai mare===");
         System.out.println(max);
     }
-    public static void ex7
+    public static void ex7(List<Masina>masini){
+        Masina min = Collections.min(masini,(m1,m2)->Integer.compare(m1.getGreutate(),m2.getGreutate()));
+        System.out.println("\n===Masina cu greuteta ce mai mica===");
+
+    }
 
 
 
