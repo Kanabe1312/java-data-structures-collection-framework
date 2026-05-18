@@ -1,5 +1,6 @@
 package app;
 
+import app.collectionsJava.MapExemples;
 import app.collectionsJava.QueueExemples;
 import app.collectionsJava.StreamExamples;
 import app.testingData.Masina;
@@ -11,9 +12,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-
-       QueueExemples q = new QueueExemples();
-       q.Ex11();
+        MapExemples m = new MapExemples();
+        m.Ex11();
 
 
 

@@ -166,7 +166,7 @@ public class QueueExemples {
             }
             System.out.println("Eliminated: "+queue.poll());
         }
-        System.out.println("Castigator: "+queue.peek());
+        System.out.println("winner: "+queue.peek());
 
 
 
@@ -249,7 +249,6 @@ public class QueueExemples {
         System.out.println(result);
     }
 
-
     public void Ex11(){
         Queue<String>tasks = new ArrayDeque<>();
 
@@ -273,5 +272,8 @@ public class QueueExemples {
 
 
     }
+
+
+
 
 }
